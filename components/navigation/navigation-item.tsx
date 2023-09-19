@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-
 import { cn } from "@/lib/utils";
 import { ActionTooltip } from "@/components/action-tooltip";
 import { useEffect, useState } from "react";
@@ -23,13 +22,15 @@ export const NavigationItem = ({
 
     const [isMounted, setIsMounted] = useState(false);
 
-    const onClick = () => {
-        router.push(`/servers/${id}`)
-    }
+
     useEffect(() => {
         setIsMounted(true);
     }, [])
 
+
+    const onClick = () => {
+        router.push(`/servers/${id}`)
+    }
 
     if(!isMounted){
         return null;
